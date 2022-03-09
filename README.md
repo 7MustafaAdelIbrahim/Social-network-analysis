@@ -292,5 +292,8 @@ We can draw the subgraph of those nodes by using a familiar function, nx-dot-dra
 
 
 
+## References.
+
+https://www.sciencedirect.com/topics/social-sciences/social-network-analysis
 
 
