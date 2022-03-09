@@ -96,6 +96,8 @@ According to degree centrality, Eddard Stark is the most important character ini
 But who is/are the most important character(s) in the fifth book according to these three measures?
 
   Jon-Snow
+  
   Stannis-Baratheon
+  
   Jon-Snow
 
