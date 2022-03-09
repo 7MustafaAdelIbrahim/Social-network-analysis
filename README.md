@@ -2,7 +2,7 @@
      A key technique in modern sociology to investigate social structures through networks and graph theory.
 
 
-From online <font color="green">***social networks such as Facebook and Twitter to transportation networks such as bike sharing systems***</font>, networks are everywhere and knowing how to analyze them will open up a new world of possibilities for you as a data scientist.
+From online <font color="green">social networks such as Facebook and Twitter to transportation networks such as bike sharing systems</font>, networks are everywhere and knowing how to analyze them will open up a new world of possibilities for you as a data scientist.
 
 This repo will equip you with the skills to analyze, visualize, and make sense of networks. and developing your network thinking skills and be able to look at your data with a fresh perspective.
 
