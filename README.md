@@ -28,12 +28,12 @@ Finally, you can leverage the network structure to find communities in the netwo
 Networks are described by two sets of items: nodes and edges. Together, these form a "network", otherwise known in mathematical terms as a "graph".
 Nodes and edges can have metadata associated with them.
 
-![image](https://user-images.githubusercontent.com/84151016/157509985-077a0c77-1654-4ace-83ff-a78362e31a45.png)
+![image]< img src= "https://user-images.githubusercontent.com/84151016/157509985-077a0c77-1654-4ace-83ff-a78362e31a45.png"  width="600" height="500">
 
 
 For example, let's say there are two friends, Hugo and Eric, who met on the 21st of May, 2016. 
 
-![image](https://user-images.githubusercontent.com/84151016/157510096-8086ce4f-5b4e-476b-ae52-33d54c7c1325.png)
+![image]<img src= "https://user-images.githubusercontent.com/84151016/157510096-8086ce4f-5b4e-476b-ae52-33d54c7c1325.png "  width="600" height="500">
 
 In this case, the nodes may be "Hugo" and Eric", with metadata stored in a key-value pair as "id" and "age".
 The friendship is represented as a line between the two nodes, and may have metadata such as "date", which represents the date on which we first met. In the Python world, 
