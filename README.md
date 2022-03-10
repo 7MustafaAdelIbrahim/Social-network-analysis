@@ -4,12 +4,9 @@
 
 From ***online social networks such as Facebook and Twitter to transportation networks such as bike sharing systems*** , networks are everywhere and knowing how to analyze them will open up a new world of possibilities for you as a data scientist.
 
-![id-program-network]<img src= "https://user-images.githubusercontent.com/84151016/157748944-69175325-d053-4bd7-b075-659553ed1ed0.jpg" width="400" height="790">
+![id-program-network]<img src= "https://user-images.githubusercontent.com/84151016/157748944-69175325-d053-4bd7-b075-659553ed1ed0.jpg" width="600" height="500">
 
 This repo will equip you with the skills to analyze, visualize, and make sense of networks. and developing your network thinking skills and be able to look at your data with a fresh perspective.
-
-
-![test image size]<img src="https://fullpath/assets/yourgif.gif" width="400" height="790">
 
 We'll build on our knowledge and skills to tackle more advanced problems in network analytics, and gain the conceptual and practical skills to analyze evolving time series of networks, learn about bipartite graphs, and how to use bipartite graphs in product recommendation systems.
 We'll also take about graph projections, why they're so useful in Data Science, and figure out the best ways to store and load graph data from files. 
