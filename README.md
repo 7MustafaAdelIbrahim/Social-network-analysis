@@ -4,7 +4,7 @@
 
 From ***online social networks such as Facebook and Twitter to transportation networks such as bike sharing systems*** , networks are everywhere and knowing how to analyze them will open up a new world of possibilities for you as a data scientist.
 
-![id-program-network](https://user-images.githubusercontent.com/84151016/157748944-69175325-d053-4bd7-b075-659553ed1ed0.jpg)
+![id-program-network](https://user-images.githubusercontent.com/84151016/157748944-69175325-d053-4bd7-b075-659553ed1ed0.jpg width="200" height="400")
 
 This repo will equip you with the skills to analyze, visualize, and make sense of networks. and developing your network thinking skills and be able to look at your data with a fresh perspective.
 
