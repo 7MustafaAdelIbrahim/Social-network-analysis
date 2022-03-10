@@ -28,7 +28,7 @@ Finally, you can leverage the network structure to find communities in the netwo
 Networks are described by two sets of items: nodes and edges. Together, these form a "network", otherwise known in mathematical terms as a "graph".
 Nodes and edges can have metadata associated with them.
 
-![image]< img src= "https://user-images.githubusercontent.com/84151016/157509985-077a0c77-1654-4ace-83ff-a78362e31a45.png"  width="600" height="500">
+![image]<img src= "https://user-images.githubusercontent.com/84151016/157509985-077a0c77-1654-4ace-83ff-a78362e31a45.png"  width="600" height="500">
 
 
 For example, let's say there are two friends, Hugo and Eric, who met on the 21st of May, 2016. 
