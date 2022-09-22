@@ -1,6 +1,6 @@
 # Social-network-analysis
      A key technique in modern sociology to investigate social structures through networks and graph theory.
-
+     Networks are everywhere arround you and knowing how to analyze them will open up a new world of possibilities for you as a data scientist.
 
 From ***online social networks*** such as ***Facebook*** and ***Twitter*** to ***the intersection of biological network, science*** and ***infectious disease*** to ***transportation networks*** which are modeling the connectivity between locations determined by roads, flight or paths connecting them, such as ***bike sharing systems***. 
 
@@ -9,7 +9,7 @@ From ***online social networks*** such as ***Facebook*** and ***Twitter*** to **
 ## Network Structure
 Networks -at its core- are described by two sets of items which are nodes and edges for modeling the relationships between entities. These nodes and edges together form a "network", otherwise known in mathematical terms as a "graph". In addition, Nodes and edges can have metadata associated with them.
 
-<img src= "https://user-images.githubusercontent.com/84151016/157509985-077a0c77-1654-4ace-83ff-a78362e31a45.png"  width="600" height="500">
+<img src= "https://user-images.githubusercontent.com/84151016/157509985-077a0c77-1654-4ace-83ff-a78362e31a45.png" width="500" height="400">
 
 By modeling your data as a network, you can end up with:
 gaining insight into what entities (or nodes) are important, such as broadcasters or influencers in a social network.
@@ -17,69 +17,43 @@ Additionally, you can start to think about optimizing transportation between cit
 Finally, you can leverage the network structure to find communities in the network.
 
 
-For example, let's say there are two friends, Hugo and Eric, who met on the 21st of May, 2016. 
-
-![image]<img src= "https://user-images.githubusercontent.com/84151016/157510096-8086ce4f-5b4e-476b-ae52-33d54c7c1325.png "  width="600" height="500">
+For example, let's say there're 2 friends, Hugo and Eric, who met on the 21st of May, 2016. 
+<img src= "https://user-images.githubusercontent.com/84151016/157510096-8086ce4f-5b4e-476b-ae52-33d54c7c1325.png "  width="500" height="400">
 
 In this case, the nodes may be "Hugo" and Eric", with metadata stored in a key-value pair as "id" and "age".
-The friendship is represented as a line between the two nodes, and may have metadata such as "date", which represents the date on which we first met. In the Python world, 
-
-### NetworkX API Basics
-There’s a library called NetworkX that allows us to manipulate, analyze and model graph data.
-Let's see how we can use the NetworkX API to analyze graph data in memory.
-
-we can initialize an empty graph to which we can add nodes and edges.
-I can add in the integers 1, 2, and 3 as nodes, using the add_nodes_from method, passing in the list [1, 2, 3] as an argument.
-The Graph object G has a dot-nodes method that allows us to see what nodes are present in the graph, and returns a list of nodes. If we add an edge between the nodes 1 and 2, we can then use the G-dot-edges method to return a list of tuples which represent the edges, in which each tuple shows the nodes that are present on that edge. 
-
+The friendship is represented as a line between these 2 nodes, and may have metadata, such as "date", which represents the date on which they first met. 
 
 ## Types of graphs. 
 
-#### Undirected graphs
+#### 1- Undirected graphs.
+          Undirected graphs are named as such, because they're comprised of edges that don't have any inherent directionality associated with them.
 
-Undirected graphs are named as such because they are comprised of edges that don't have any inherent directionality associated with them.
+<img src= "https://user-images.githubusercontent.com/84151016/157510611-7997fef5-399c-4a38-b293-737eee328c21.png" width="500" height="400">
 
-![image](https://user-images.githubusercontent.com/84151016/157510611-7997fef5-399c-4a38-b293-737eee328c21.png)
-
-
-For example, there are social graphs like Facebook. As when one user befriends another, the two are automatically connected with an edge.
+For example, there're social graphs like Facebook. As when one user befriends another, the two are automatically connected with an edge.
 This is commonly drawn as a line with no arrows between two circles.
 
-### Directed graphs
-There is an inherent directionality associated with the graph.
+#### 2- Directed graphs.
+          There's an inherent directionality associated with the graph.
+<img src= "https://user-images.githubusercontent.com/84151016/157510673-ac61cf3f-1cf4-4d89-833d-b71f0bfe0f50.png" width="500" height="400">
+Twitter's social graph is a directed network. As the nature of how users interact with one another. One user may follow another, but that other don't.
 
-![image](https://user-images.githubusercontent.com/84151016/157510673-ac61cf3f-1cf4-4d89-833d-b71f0bfe0f50.png)
+#### 3- Multi-edge (Directed) graphs.
+           Two or more edges connecting the same two vertices within a multigraph.
+<img src= "https://user-images.githubusercontent.com/84151016/157510771-6f2d8106-9a71-4ab5-be3f-5c78d61602b3.png" width="500" height="400">
+I.e, we may want to model trips between flight, Each flight may be an edge between the pair of airports.
 
+### 4- Self-loops.
+     Nodes that are connected to themselves.
 
-Twitter's social graph is a directed network.
-This is because of the nature of how users interact with one another. For example, one user may follow another, but that other user may not follow back.
-
-### Multi-edge (Directed) graphs
-
-![image](https://user-images.githubusercontent.com/84151016/157510771-6f2d8106-9a71-4ab5-be3f-5c78d61602b3.png)
-
-
-For example, we may want to model trips between bike sharing stations. Each trip may be one edge between the pair of stations.
-
- 
-we can likewise instantiate a MultiGraph using nx-dot-MultiGraph. If we check for its type, it will be of the MultiGraph class. Likewise for the MultiDiGraph object. Sometimes, for practical reasons, it may be too memory-intensive to model multiple edges per pair of nodes, and so one may choose 
-
+<img src= "https://user-images.githubusercontent.com/84151016/157511095-3b20eee5-2ea6-40e4-9a1c-14b6b5c2f983.png" width="500" height="400">
+Self-loops can be used in certain scenarios, such as in bike sharing data, where a trip begins at a station and end at the same station.
 
 ### Weights on graphs
-to collapse the edges into a single edge that contains a metadata summary of the original.
-For example, we may want to collapse these three edges into a single one and give them a "weight" metadata 
-with the value "3", indicating that it was originally 3 edges between the pair of nodes. Let's go through one final concept: the idea of 
+For collapsing the edges into a single edge that contains a metadata summary of the original. For example, we may want to collapse these three edges into a single one and give them a "weight" metadata. with the value "3", indicating that it was originally 3 edges between the pair of nodes.
 
-![image](https://user-images.githubusercontent.com/84151016/157511004-e24d3aac-f447-42c7-a17e-5572cecf3ffc.png)
-
-
-### Self-loops
-
-Nodes that are connected to themselves
-
-![image](https://user-images.githubusercontent.com/84151016/157511095-3b20eee5-2ea6-40e4-9a1c-14b6b5c2f983.png)
-
-Self-loops can be used in certain scenarios, such as in bike sharing data, where a trip begins at a station and end at the same station. One of the exercises you will encounter will leverage what you've learned so far about the NetworkX API to find edges that are self-loops in a graph. 
+<img src= " https://user-images.githubusercontent.com/84151016/191639572-48709437-5867-40f6-92c5-99df35128ce3.png " width="300" height="200">
+<img src= "https://user-images.githubusercontent.com/84151016/191639608-7b8ea93e-5f04-40de-a0ef-44b00774320a.png " width="300" height="200">
 
 
 ## Network visualization
