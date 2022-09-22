@@ -108,7 +108,7 @@ In the majority of situations, we would consider the left graph's center node to
 
 ## Degree centrality
 It's simply defined as the number of neighbors that a node has divided by the total number of neighbors that the node could possibly have.
-<img src= "https://user-images.githubusercontent.com/84151016/157513652-b34ed3a6-1d34-48c0-9831-f181572a99a0.png" width="500" height="400">
+<img src= "https://user-images.githubusercontent.com/84151016/191648130-cb804f55-2139-4aa8-8909-0e0cbfe0e09e.png" width="700" height="400">
 
 #### There're 2 scenarios possible here: 
 ##### If self-loops're allowed. 
@@ -125,9 +125,7 @@ Using any search strategies, such as the ***breadth-first search (BFS) algorithm
 
 The definition of ***betweenness centrality*** is defined as ****the number of shortest paths in a graph that pass through a node divided by the number of shortest paths that exist between every pair of nodes in a graph***.
 This metric captures a different view of importance - in essence, it captures bottleneck nodes in a graph, rather than highly connected nodes; this will become much clearer as we go on.
-
-<img src= "https://user-images.githubusercontent.com/84151016/157515953-4545f816-f9ad-4bac-bf94-58217f6cefc3.png" width="500" height="400">
-
+<img src= "https://user-images.githubusercontent.com/84151016/191648394-672f52fe-7f07-458a-adac-ea05af79d834.png" width="700" height="400">
 
 #### Where might betweenness centrality useful?
 
@@ -136,11 +134,9 @@ Alternatively, consider the internet, where there are crucial links that bridge 
 
 
 Examples
-Let's look at the Singapore subway system to make this more concrete. Take a look at two sets of stations that I have highlighted. In the south, there's a cluster of stations in the central business district that serve as connectors between different lines, but there's also this other station called Jurong East, which is only connected to three other stations, but serves as a major transit connector point between the red and the green lines.
+Let's look at the Singapore subway system to make this more concrete. Take a look at two sets of stations that I have highlighted. In the south, there's a cluster of stations in the central business district that serve as connectors between different lines, but there's also this other station called Jurong East, which is only connected to three other stations, but serves as a major transit connector point between the red and the green lines. [Source](http://www.seacitymaps.com/singapore/singapore_mrt_map.jpg)
 
-![image](https://user-images.githubusercontent.com/84151016/157516172-9b6bc3de-026d-4cac-9c6a-c98588087d34.png)
-
-[Source:] (http://www.seacitymaps.com/singapore/singapore_mrt_map.jpg)
+<img src= "https://user-images.githubusercontent.com/84151016/157516172-9b6bc3de-026d-4cac-9c6a-c98588087d34.png" width="700" height="700">
 
 Let's take a look at the code for computing betweenness centrality. Let's say we have a graph G that is a barbell graph. We can create this graph 
 by using one of NetworkX's graph generators, nx-dot-barbell_graph, with m1 being the number of nodes in the barbell ends, and m2 being the number of nodes in the barbell bridge. To get the betweenness centrality, we can call on NetworkX's betweenness_centrality function, which takes in a graph object G as an argument. What that function returns is a dictionary, just like the degree_centrality function, in which the nodes are the keys and their betweenness centrality scores are the values. 
