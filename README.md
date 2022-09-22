@@ -74,60 +74,52 @@ In a Matrix Plot, nodes're the rows and columns of a matrix, and cells're filled
 
 ### In an undirected graph. 
 
-<img src= "https://user-images.githubusercontent.com/84151016/157511853-120b8959-d891-4283-87aa-ce5b9b39bc7c.png " width="500" height="300">
+<img src= "https://user-images.githubusercontent.com/84151016/157511853-120b8959-d891-4283-87aa-ce5b9b39bc7c.png " width="800" height="300">
 
 The matrix is symmetrical around the diagonal, which I've highlighted in gray. I've also highlighted one edge in the toy graph, edge (A, B), which is equivalent to the edge (B, A).Likewise for edge (A, C), it's equivalent to the edge (C, A), as there's no directionality associated with it. 
 
 ### Directed matrices
 
-<img src= "https://user-images.githubusercontent.com/84151016/157511979-4150c688-f685-4491-be1d-33e119c644d2.png " width="500" height="300">
+<img src= "https://user-images.githubusercontent.com/84151016/157511979-4150c688-f685-4491-be1d-33e119c644d2.png " width="600" height="300">
 
 If the graph were a directed graph, then the matrix representation is not necessarily going to be symmetrical. In this example, we have a bidirectional edge between A and C, but only an edge from A to B and not B to A. Thus, we will have (A, B) filled in, but not (B, A).If the nodes are ordered along the rows and columns such that neighbors are listed close to one another, then a matrix plot can be used to visualize clusters, or communities, of nodes.
 
 ## Arc plot
 
-<img src= "https://user-images.githubusercontent.com/84151016/157512142-c58fc82a-30dd-4514-b88d-8aeda605c672.png " width="500" height="300">
+<img src= "https://user-images.githubusercontent.com/84151016/157512142-c58fc82a-30dd-4514-b88d-8aeda605c672.png " width="600" height="300">
 
 Arc plot is a transformation of the node-link diagram layout, in which nodes are ordered along one axis of the plot, and edges are drawn using circular arcs from one node to another. If the nodes are ordered according to some some sortable rule, e.g. age in a social network of users, or otherwise grouped together, e.g. by geographic location in map for a transportation network, then it will be possible to visualize the relationship between connectivity and the sorted (or grouped) property. Arc Plots are a good starting point for visualizing a network, as it forms the basis of the later plots that we'll take a look at. 
 
 ## Circos plot
 
-<img src= "https://user-images.githubusercontent.com/84151016/157512318-1a74d217-b743-4434-8ee1-61ae597afacd.png " width="500" height="300">
+<img src= "https://user-images.githubusercontent.com/84151016/157512318-1a74d217-b743-4434-8ee1-61ae597afacd.png " width="600" height="300">
 
 Circos is a transformation of the ArcPlot, such that the two ends of the ArcPlot are joined together into a circle. Circos Plots were originally designed for use in genomics, and you can think of them as an aesthetic and compact alternative to Arc Plots. You will be using a plotting utility that I developed 
-
-
-nxviz API
-called nxviz. Here's how to use it. Suppose we had a Graph G in which we added nodes and edges. To visualize it using nxviz, we first need to import nxviz as nv, and import matplotlib to make sure that we can show the plot later. Next, we instantiate a new nv-dot-ArcPlot object, and pass in a graph G. We can also order nodes by the values keyed on some "key". Finally, we can call the draw function, and as always, we also call plt-dot-show.
 
 ## Important nodes.
           How might we tell what an important node is?
 
-There're 2 concepts to be ntroduced. The 1st is called "degree centrality", the other is called "betweenness centrality". Let's take a look at the following two "star graphs". If you looked at the center nodes, which center node of the two graphs might be considered "more important"?
+Many metrics we can use to evaluate the importance of a node. But, there're 2 concepts more important to be introduced. The 1st is called "degree centrality", the other is called "betweenness centrality". Let's take a look at the following two "star graphs". If you looked at the center nodes, which center node of the two graphs might be considered "more important"?
 
 <img src= "https://user-images.githubusercontent.com/84151016/157513367-32142d60-fc44-4d1c-abeb-9338f03081cd.png " width="500" height="300">
 
 If you chose the left graph, then you'd be very justified in doing so!
 In the majority of situations, we would consider the left graph's center node to be more important than the right graph's center node, because it is connected to more nodes. Being connected to other nodes means other nodes are considered a neighbor of that node. From the concept of neighbors, we can now introduce the concept of "degree centrality".
 
-### Degree centrality
-The degree centrality metric is one of many metrics we can use to evaluate the importance of a node, and is simply defined as the number of neighbors that a node has divided by the total number of neighbors that the node could possibly have.
+## Degree centrality
+     It's simply defined as the number of neighbors that a node has divided by the total number of neighbors that the node could possibly have.
 
-![image](https://user-images.githubusercontent.com/84151016/157513652-b34ed3a6-1d34-48c0-9831-f181572a99a0.png)
+<img src= "https://user-images.githubusercontent.com/84151016/157513652-b34ed3a6-1d34-48c0-9831-f181572a99a0.png" width="500" height="300">
 
+#### There're 2 scenarios possible here: 
+##### If self-loops're allowed. 
+such as in a network mapping of all bike trips in a bike sharing system, then the number of neighbors that I could possibly have, is every single node in the graph, including myself.
 
-There are two scenarios possible here: 
-#### If self-loops are allowed. 
-such as in a network mapping of all bike trips in a bike sharing system, then the number of neighbors that I could possibly have is every single node in the graph, including myself.
-
-#### On the other hand, if self-loops are not allowed.
+##### On the other hand, if self-loops are not allowed.
 such as in the Twitter social network where, by definition, my account cannot follow itself, then the number of neighbors I could possibly have is every other node in the graph, excluding myself.In real life, examples of nodes in a graph that have high degree centrality might be: Twitter broadcasters, that is, users that are followed by many other users; airport transportation hubs such as the New York, London or Tokyo airports; and finally, disease super-spreaders, who are the individuals that epidemiologists would want to track down to help stop the spread of a disease. Let's now introduce the NetworkX API.
 
 ## Betweenness centrality
-   Before we talk about that, we need to extend our knowledge with one key concept such as all shortest paths.
-
-### All shortest paths
-
+Before we talk about that, we need to extend our knowledge with one key concept such as ***all shortest paths*** .
 That of "all shortest paths". In the section below, we'll take about how to find the shortest path between any pair of nodes, using the breadth-first search algorithm. Imagine now we used the BFS to find every shortest path between every pair of nodes. What we would get back is the set of "all shortest paths" in a graph.
 In other words, "all shortest paths" are the set of paths in a graph, such that each path is the shortest path between a given pair of nodes, done for all pairs of nodes. Now we can introduce 
 
