@@ -2,33 +2,19 @@
      A key technique in modern sociology to investigate social structures through networks and graph theory.
 
 
-From ***online social networks such as Facebook and Twitter to transportation networks such as bike sharing systems*** , networks are everywhere and knowing how to analyze them will open up a new world of possibilities for you as a data scientist.
+From ***online social networks*** such as ***Facebook*** and ***Twitter*** to ***the intersection of biological network, science*** and ***infectious disease*** to *** transportation networks*** which are modeling the connectivity between locations determined by roads, flight or paths connecting them, such as *** bike sharing systems***. 
 
-<img src= "https://user-images.githubusercontent.com/84151016/157748944-69175325-d053-4bd7-b075-659553ed1ed0.jpg" width="600" height="500">
+<img src= "https://user-images.githubusercontent.com/84151016/157748944-69175325-d053-4bd7-b075-659553ed1ed0.jpg" width="500" height="400">
 
-This repo will equip you with the skills to analyze, visualize, and make sense of networks. and developing your network thinking skills and be able to look at your data with a fresh perspective.
+## Network Structure
+Networks -at its core- are described by two sets of items which are nodes and edges for modeling the relationships between entities. These nodes and edges together form a "network", otherwise known in mathematical terms as a "graph". In addition, Nodes and edges can have metadata associated with them.
 
-We'll build on our knowledge and skills to tackle more advanced problems in network analytics, and gain the conceptual and practical skills to analyze evolving time series of networks, learn about bipartite graphs, and how to use bipartite graphs in product recommendation systems.
-We'll also take about graph projections, why they're so useful in Data Science, and figure out the best ways to store and load graph data from files. 
-
-
-Networks!
-the intersection of biological network science and infectious disease
-Let me first ask you a question: 
-             what are some examples of networks? 
-In a social network, we are modeling the relationships between people. 
-In a transportation network, we are modeling the connectivity between locations, as determined by roads or flight paths connecting them. At its core, networks are a useful tool for modeling relationships between entities.
+<img src= "https://user-images.githubusercontent.com/84151016/157509985-077a0c77-1654-4ace-83ff-a78362e31a45.png"  width="600" height="500">
 
 By modeling your data as a network, you can end up with:
 gaining insight into what entities (or nodes) are important, such as broadcasters or influencers in a social network.
 Additionally, you can start to think about optimizing transportation between cities.
-Finally, you can leverage the network structure to find communities in the network. Let's go a bit more technical. 
-
-## Network Structure
-Networks are described by two sets of items: nodes and edges. Together, these form a "network", otherwise known in mathematical terms as a "graph".
-Nodes and edges can have metadata associated with them.
-
-![image]<img src= "https://user-images.githubusercontent.com/84151016/157509985-077a0c77-1654-4ace-83ff-a78362e31a45.png"  width="600" height="500">
+Finally, you can leverage the network structure to find communities in the network.
 
 
 For example, let's say there are two friends, Hugo and Eric, who met on the 21st of May, 2016. 
