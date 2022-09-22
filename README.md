@@ -2,7 +2,7 @@
      A key technique in modern sociology to investigate social structures through networks and graph theory.
 
 
-From ***online social networks*** such as ***Facebook*** and ***Twitter*** to ***the intersection of biological network, science*** and ***infectious disease*** to *** transportation networks*** which are modeling the connectivity between locations determined by roads, flight or paths connecting them, such as *** bike sharing systems***. 
+From ***online social networks*** such as ***Facebook*** and ***Twitter*** to ***the intersection of biological network, science*** and ***infectious disease*** to ***transportation networks*** which are modeling the connectivity between locations determined by roads, flight or paths connecting them, such as ***bike sharing systems***. 
 
 <img src= "https://user-images.githubusercontent.com/84151016/157748944-69175325-d053-4bd7-b075-659553ed1ed0.jpg" width="500" height="400">
 
