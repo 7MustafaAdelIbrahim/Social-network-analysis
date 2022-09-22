@@ -1,6 +1,6 @@
 # Social-network-analysis
      A key technique in modern sociology to investigate social structures through networks and graph theory.
-     Networks are everywhere arround you and knowing how to analyze them will open up a new world of possibilities for you as a data scientist.
+     Networks're everywhere arround you, knowing how to analyze them will open up a new world of possibilities.
 
 From ***online social networks*** such as ***Facebook*** and ***Twitter*** to ***the intersection of biological network, science*** and ***infectious disease*** to ***transportation networks*** which are modeling the connectivity between locations determined by roads, flight or paths connecting them, such as ***bike sharing systems***. 
 
@@ -16,7 +16,6 @@ gaining insight into what entities (or nodes) are important, such as broadcaster
 Additionally, you can start to think about optimizing transportation between cities.
 Finally, you can leverage the network structure to find communities in the network.
 
-
 For example, let's say there're 2 friends, Hugo and Eric, who met on the 21st of May, 2016. 
 <img src= "https://user-images.githubusercontent.com/84151016/157510096-8086ce4f-5b4e-476b-ae52-33d54c7c1325.png "  width="500" height="400">
 
@@ -28,32 +27,32 @@ The friendship is represented as a line between these 2 nodes, and may have meta
 #### 1- Undirected graphs.
           Undirected graphs are named as such, because they're comprised of edges that don't have any inherent directionality associated with them.
 
-<img src= "https://user-images.githubusercontent.com/84151016/157510611-7997fef5-399c-4a38-b293-737eee328c21.png" width="500" height="400">
+<img src= "https://user-images.githubusercontent.com/84151016/157510611-7997fef5-399c-4a38-b293-737eee328c21.png" width="500" height="200">
 
 For example, there're social graphs like Facebook. As when one user befriends another, the two are automatically connected with an edge.
 This is commonly drawn as a line with no arrows between two circles.
 
 #### 2- Directed graphs.
           There's an inherent directionality associated with the graph.
-<img src= "https://user-images.githubusercontent.com/84151016/157510673-ac61cf3f-1cf4-4d89-833d-b71f0bfe0f50.png" width="500" height="400">
+<img src= "https://user-images.githubusercontent.com/84151016/157510673-ac61cf3f-1cf4-4d89-833d-b71f0bfe0f50.png" width="500" height="200">
 Twitter's social graph is a directed network. As the nature of how users interact with one another. One user may follow another, but that other don't.
 
 #### 3- Multi-edge (Directed) graphs.
            Two or more edges connecting the same two vertices within a multigraph.
-<img src= "https://user-images.githubusercontent.com/84151016/157510771-6f2d8106-9a71-4ab5-be3f-5c78d61602b3.png" width="500" height="400">
+<img src= "https://user-images.githubusercontent.com/84151016/157510771-6f2d8106-9a71-4ab5-be3f-5c78d61602b3.png" width="500" height="200">
 I.e, we may want to model trips between flight, Each flight may be an edge between the pair of airports.
 
 ### 4- Self-loops.
      Nodes that are connected to themselves.
 
-<img src= "https://user-images.githubusercontent.com/84151016/157511095-3b20eee5-2ea6-40e4-9a1c-14b6b5c2f983.png" width="500" height="400">
+<img src= "https://user-images.githubusercontent.com/84151016/157511095-3b20eee5-2ea6-40e4-9a1c-14b6b5c2f983.png" width="500" height="200">
 Self-loops can be used in certain scenarios, such as in bike sharing data, where a trip begins at a station and end at the same station.
 
 ### Weights on graphs
 For collapsing the edges into a single edge that contains a metadata summary of the original. For example, we may want to collapse these three edges into a single one and give them a "weight" metadata. with the value "3", indicating that it was originally 3 edges between the pair of nodes.
 
-<img src= " https://user-images.githubusercontent.com/84151016/191639572-48709437-5867-40f6-92c5-99df35128ce3.png " width="300" height="200">
-<img src= "https://user-images.githubusercontent.com/84151016/191639608-7b8ea93e-5f04-40de-a0ef-44b00774320a.png " width="300" height="200">
+<img src= "https://user-images.githubusercontent.com/84151016/191639572-48709437-5867-40f6-92c5-99df35128ce3.png" width="300" height="200">
+<img src= "https://user-images.githubusercontent.com/84151016/191639608-7b8ea93e-5f04-40de-a0ef-44b00774320a.png" width="300" height="200">
 
 
 ## Network visualization
