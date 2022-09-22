@@ -107,25 +107,26 @@ If you chose the left graph, then you'd be very justified in doing so!
 In the majority of situations, we would consider the left graph's center node to be more important than the right graph's center node, because it is connected to more nodes. Being connected to other nodes means other nodes are considered a neighbor of that node. From the concept of neighbors, we can now introduce the concept of "degree centrality".
 
 ## Degree centrality
-     It's simply defined as the number of neighbors that a node has divided by the total number of neighbors that the node could possibly have.
-
-<img src= "https://user-images.githubusercontent.com/84151016/157513652-b34ed3a6-1d34-48c0-9831-f181572a99a0.png" width="500" height="300">
+It's simply defined as the number of neighbors that a node has divided by the total number of neighbors that the node could possibly have.
+<img src= "https://user-images.githubusercontent.com/84151016/157513652-b34ed3a6-1d34-48c0-9831-f181572a99a0.png" width="500" height="400">
 
 #### There're 2 scenarios possible here: 
 ##### If self-loops're allowed. 
 such as in a network mapping of all bike trips in a bike sharing system, then the number of neighbors that I could possibly have, is every single node in the graph, including myself.
 
 ##### On the other hand, if self-loops are not allowed.
-such as in the Twitter social network where, by definition, my account cannot follow itself, then the number of neighbors I could possibly have is every other node in the graph, excluding myself.In real life, examples of nodes in a graph that have high degree centrality might be: Twitter broadcasters, that is, users that are followed by many other users; airport transportation hubs such as the New York, London or Tokyo airports; and finally, disease super-spreaders, who are the individuals that epidemiologists would want to track down to help stop the spread of a disease. Let's now introduce the NetworkX API.
+such as in the Twitter social network where, by definition, my account cannot follow itself, then the number of neighbors I could possibly have, is every other node in the graph, excluding myself.
+In real life, examples of nodes in a graph that have high degree centrality might be: Twitter broadcasters. users that are followed by many other users, airport transportation hubs, such as the New York, London or Tokyo airports nd finally, disease super-spreaders, who are the individuals that epidemiologists would want to track down to help stop the spread of a disease. Let's now introduce the NetworkX API.
 
 ## Betweenness centrality
 Before we talk about that, we need to extend our knowledge with one key concept such as ***all shortest paths*** .
-That of "all shortest paths". In the section below, we'll take about how to find the shortest path between any pair of nodes, using the breadth-first search algorithm. Imagine now we used the BFS to find every shortest path between every pair of nodes. What we would get back is the set of "all shortest paths" in a graph.
-In other words, "all shortest paths" are the set of paths in a graph, such that each path is the shortest path between a given pair of nodes, done for all pairs of nodes. Now we can introduce 
+#### ***How to find the shortest path between any pair of nodes?!*** 
+Using any search strategies, such as the ***breadth-first search (BFS) algorithm***. Imagine we used the BFS to find every shortest path between every pair of nodes. What we would get back is the set of "all shortest paths" in a graph. In other words, ***"all shortest paths"*** are the set of paths in a graph, such that each path is the shortest path between a given pair of nodes, done for all pairs of nodes. Now we can introduce 
 
-The definition of betweenness centrality is defined as the number of shortest paths in a graph that pass through a node divided by the number of shortest paths that exist between every pair of nodes in a graph. This metric captures a different view of importance - in essence, it captures bottleneck nodes in a graph, rather than highly connected nodes; this will become much clearer as we go on.
+The definition of ***betweenness centrality*** is defined as ****the number of shortest paths in a graph that pass through a node divided by the number of shortest paths that exist between every pair of nodes in a graph***.
+This metric captures a different view of importance - in essence, it captures bottleneck nodes in a graph, rather than highly connected nodes; this will become much clearer as we go on.
 
-![image](https://user-images.githubusercontent.com/84151016/157515953-4545f816-f9ad-4bac-bf94-58217f6cefc3.png)
+<img src= "https://user-images.githubusercontent.com/84151016/157515953-4545f816-f9ad-4bac-bf94-58217f6cefc3.png" width="500" height="400">
 
 
 #### Where might betweenness centrality useful?
@@ -181,64 +182,6 @@ On our 3rd degree of separation out, we see that the destination node is present
 Let's quickly review some code that will help you with the following exercises. Say we have a graph G. As a good habit, let's check first for the number of nodes and edges present. Recall that we can do len(G-dot-edges) and len(G-dot-nodes), and see that there are 57 edges between 20 nodes. Let's see if we can find a path between nodes 1 and 19. 
 If we do G-dot-neighbors(1), we get back a list containing the nodes [10, 5, 14, 7] as the neighbors of 1. Let's go one degree out, to the first node in the list of node 1's neighbors, which is node 10. Now, let's check the neighbors of 10: note that we have 1, which is correct, and then 19, and then a whole slew of other nodes. Since 19, our destination node, is present in the neighbors of node 10, we can stop there. If 19 wasn't there, we would go on to check the neighbors of node 5, which was the next node in the list of node 1's neighbors.
 
-
-
-## Network structures. 
-     Finding interesting structures within network data.
-
-We'll take about essential concepts such as ***cliques, communities, and subgraphs***, which will leverage all of the skills you acquired. 
-By the end of this chapter, you'll be ready to apply the concepts you've learned to a real-world case study. 
-
-Video1
- feeling challenged and energized for the coming set of ideas!
-
-We're now going to explore the concepts of structures and subgraphs, using NetworkX.
-
-particularly on path finding and the use of neighbors. Before we go to the technical stuff, let's think about a real-life scenario.
-Cliques
-Have you ever been in a clique? How would you characterize the clique? It probably was comprised of people who knew everybody else in the group to a pretty strong degree.
-Now imagine if there was another new person not originally part of the clique that joined in , this group, it wouldn't feel like a "clique", because the new person doesn't really know everybody else, and vice versa.
-
-In network theory, a "clique" is essentially defined on the social version of a clique: a set of nodes that are completely connected by an edge to every other node in the set.
-
-It is, then, a completely connected graph. What might be the "simplest clique"?
-By the definition of a clique, an edge is the simplest clique possible.
-
-what would be the simplest "complex clique"? 
-"3 nodes fully connected", or, in other words, "a triangle 
-Triangle Applications
-What are some applications of finding "triangles" in a network?
-one example may be in friend recommendation systems. For example, if A knows B and A knows C, but B and C are not yet connected, then there's a good chance that B knows C as well, and may want to be connected online, by doing what we call triangle closures.
-Clique Code
-How might you write code that finds all triangles that a node is involved in? but I will give you a few coding hints to launch you into them. Suppose you had a graph G, and you wanted to iterate over every pair of nodes, and not only every edge. Rather than writing a double for-loop, you might want to use the combinations function from the Python itertools module. In this way, your for loop can iterate over every pair of nodes in the network, by using the following code: for n1, n2 in combinations(sequence, size of combinations) - so in this case it's G-dot-nodes and 2 because we wanted pairs of nodes. In the logical code block just after, we can do whatever we need to do with the pairs of nodes. In this demo code above, I've just decided to print them
-Video2
-Maximal cliques
-Maximal cliques are defined as such: they are a clique, but that clique cannot be extended by adding another node in the graph.
-For example, the sub-clique of the 3 green nodes can be extended by one blue node to form a larger clique. As such, these 3 green nodes do not form a "maximal clique" in the graph. On the other hand, the four nodes
-connected as a clique together cannot be extended and still remain a clique, as the remaining node is not fully connected to the other four nodes. As such, these four nodes constitute a "maximal clique".
-The concept of maximal cliques has its uses in community finding algorithms. Without going into the myriad of details possible, I hope to define at a basic level
-Communities
-what a community is. Cliques form a good starting point for finding communities, as they are fully connected subgraphs within a larger graph. By identifying these maximal cliques, one naive way of identifying communities might be identifying the unions of maximal cliques that share some number of members, but are also of some minimum size.
- NetworkX API
-NetworkX provides a function for finding all maximal cliques, which is the find_cliques function. Remember this as you go forward, that find_cliques will not just find any clique but the set of maximal cliques.
-Maximal cliques
-Let's bring back the barbell graph from before. If we apply the nx-dot-find_cliques function, we will find that it returns a generator, which we can iterate over, but it doesn't return the list of maximal cliques. To get the list of maximal cliques, we need to cast that as a list.
-It should be clear to you that there are two maximal cliques of size 5 in this graph. What might be less intuitive is that there are
-two maximal cliques of size 2 - these are the edges between nodes 4 and 5, and nodes 5 and 6. Recall that edges are also a clique.
-Video3
-Subgraphs
-"subgraphs" in the context of cliques. When you have a large graph, and you want to visualize just a small portion of it, it can be helpful to extract those nodes and their associated edges as a separate graph object.
-For example, you might want to visualize a particular path through the network, or you might want to visualize a particular community or clique.
-Alternatively, you might just want to explore the structure of the graph around a node going out a number of degrees of separation. In all of these scenarios, it's useful to be able to "slice out" the nodes and edges of interest, and visualize them.
-Let's take a look at how we might be able to do this. Let's say I have a graph G, made by the Erdos-Renyi graph generator in NetworkX. I can construct it by using the nx-dot-erdos_renyi_graph function, passing in n equals 20 (for the number of nodes in the graph), and p equals 0-point-2 (for the probability that an edge exists between a given pair of nodes). The graph is generated probabilistically, and in this instance, has 20 nodes, connected by 37 edges. Let's say I'm interested in plotting node 8 and its neighbors. I can first initialize a list called nodes, comprised of the neighbors of node 8. I can then append the node 8 to the list. To get the subgraph, of the five nodes, I can use the
-G-dot-subgraph function, passing in the nodes list, and assign the result to a new graph called G_eight-dot-G_eight will have the nodes 8 and its neighbors, and the four edges that connect node 8 to its neighbors. In addition, it will contain the edges that exist between node 8's neighbors, such as the edge between node 2 and 10. If we check the data type of both graphs, we'll notice that they will both have the same data type.
-We can draw the subgraph of those nodes by using a familiar function, nx-dot-draw. Note that apart from passing in the graph object G_eight, we can also tell the draw function to draw the graph with node labels as well, to help with visualization.
-
-
-
-
 ## References.
 
 https://www.sciencedirect.com/topics/social-sciences/social-network-analysis
-
-
