@@ -8,7 +8,6 @@ From ***online social networks*** such as ***Facebook*** and ***Twitter*** to **
 <img src= "https://user-images.githubusercontent.com/84151016/157748944-69175325-d053-4bd7-b075-659553ed1ed0.jpg" width="450" height="400">
 <img src= "https://user-images.githubusercontent.com/84151016/191648903-8dcbdafd-e07f-4d96-a6d1-e212ac20e09e.png " width="450" height="400">
  </p>
- 
 ## Network Structure.
 
 Networks-at its core-are described by two sets of items which are nodes and edges for modeling the relationships between entities. These nodes and edges together form a "network", otherwise known in mathematical terms as a "graph". In addition, Nodes and edges can have metadata associated with them.
@@ -29,7 +28,7 @@ The friendship is represented as a line between these 2 nodes, and may have meta
 ## Types of graphs. 
 
 #### 1- Undirected graphs.
-      Undirected graphs're named as such, as they're comprised of edges that don't have any inherent directionality associated with them.
+      Undirected graphs are comprised of edges that don't have any inherent directionality associated with them.
 
 <img src= "https://user-images.githubusercontent.com/84151016/157510611-7997fef5-399c-4a38-b293-737eee328c21.png" width="400" height="100">
 
