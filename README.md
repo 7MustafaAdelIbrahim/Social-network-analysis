@@ -28,7 +28,7 @@ The friendship is represented as a line between these 2 nodes, and may have meta
 ## Types of graphs. 
 
 #### 1- Undirected graphs.
-      Undirected graphs are comprised of edges that don't have any inherent directionality associated with them.
+      Undirected graphs're named as such, as they're comprised of edges that don't have any inherent directionality associated with them.
 
 <img src= "https://user-images.githubusercontent.com/84151016/157510611-7997fef5-399c-4a38-b293-737eee328c21.png" width="400" height="100">
 
@@ -95,7 +95,7 @@ Arc plot is a transformation of the node-link diagram layout, in which nodes are
 
 ## Circos plot
 
-<img src= "https://user-images.githubusercontent.com/84151016/157512318-1a74d217-b743-4434-8ee1-61ae597afacd.png " width="600" height="300">
+<img src= "https://user-images.githubusercontent.com/84151016/157512318-1a74d217-b743-4434-8ee1-61ae597afacd.png " width="800" height="300">
 
 Circos is a transformation of the ArcPlot, such that the two ends of the ArcPlot are joined together into a circle. Circos Plots were originally designed for use in genomics, and you can think of them as an aesthetic and compact alternative to Arc Plots. You will be using a plotting utility that I developed 
 
